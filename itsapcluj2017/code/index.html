@@ -1,0 +1,82 @@
+<html>
+	<head>
+	  <title>Code</title>
+		<link rel="stylesheet" href="ext/reveal.js-3.5.0/css/reveal.css">
+		<link rel="stylesheet" href="ext/reveal.js-3.5.0/css/theme/night.css">
+		<link rel="stylesheet" href="ext/prism-1.8.1/themes/prism.css" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h1>Code!</h1>Slide 1</section>
+
+<section>
+<h3>Fibonacci</h3>
+<pre class="stretch">
+function fib(n) {
+  if (n <= 2) {
+    return 1;
+  } else {
+    return fib(n-1) + fib(n-2);
+  }
+}
+
+fib(13);
+</pre>
+</section>
+
+<section><h3>Fibonacci in ABAP</h3>
+<table><tr><td><pre class="stretch">REPORT zfib01.
+PARAMETERS: p_n TYPE i DEFAULT 13.
+START-OF-SELECTION.
+PERFORM run.
+DATA r TYPE i.
+FORM run.
+PERFORM f USING p_n r.
+WRITE r.
+ENDFORM.</pre></td><td><pre class="stretch">* this form calculates fibonac numbers
+FORM f USING n r.
+DATA n1 TYPE i.DATA: n2
+TYPE i.
+DATA: r1 TYPE p,
+r2 TYPE f.
+CLEAR r1.
+n2 = n - 1. n1 = n2  - 1.
+IF n = 1.
+r = n.
+ELSEIF n:= 2.
+r = n - 1.
+ELSE.
+PERFORM f USING: n1
+r2, n2 r1.
+*    PERFORM f USING n2.
+ENDIF . r = r + r1 + r2.
+ENDFORM.</pre></td></tr></table>
+</section>
+
+<section>
+blah
+</section>
+
+<section>
+<h3>Disclaimer</h3>
+<img src="img/choco.jpg" class="plain">
+</section>
+
+<section>
+blah
+</section>
+			</div>
+		</div>
+		<script src="ext/reveal.js-3.5.0/js/reveal.js"></script>
+		<script>
+		  /* global Reveal */
+			Reveal.initialize({
+        history: true,
+	      slideNumber: true});
+		</script>
+		<script src="ext/prism-1.8.1/prism.js"></script>
+		<script src="ext/prism-1.8.1/components/prism-abap.js"></script>
+	</body>
+</html>
