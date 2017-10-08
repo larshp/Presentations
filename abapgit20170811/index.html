@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>abapGit</title>
+
+		<link rel="stylesheet" href="ext/font-awesome-4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="ext/octicons/octicons.css">
+		<link rel="stylesheet" href="ext/prism/prism.css" />
+		<link rel="stylesheet" href="ext/reveal.js-3.3.0/css/reveal.css">
+		<link rel="stylesheet" href="theme.css">
+		<link rel="stylesheet" href="squares.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="ext/reveal.js-3.3.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'ext/reveal.js-3.3.0/css/print/pdf.css' : 'ext/reveal.js-3.3.0/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section>
+<img src="img/logo.svg" class="plain"><br>
+<b>INVIXO 2017-08-11</b>
+</section>
+
+<section>
+<table>
+<tr>
+<td><a href="https://twitter.com/LarsHvam"><i class="fa fa-twitter fa-5x plain"></i></a></td>
+<td valign="middle"><a href="https://twitter.com/LarsHvam">@LarsHvam</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/larshp"><i class="fa fa-github fa-5x plain"></i></a></td>
+<td><a href="https://github.com/larshp">larshp</a></td>
+</tr>
+</table>
+</section>
+
+<section>
+    <section>
+<h3>What is git and GitHub?</h3>
+<table><tr><td>
+<b><i class="fa fa-git fa-2x plain"></i></b><br>
+Decentralized version control system, it allows you to:<br>
+<ul>
+<li>Compare changes over time</li>
+<li>Rollback files to old version</li>
+<li>Track who changed what</li>
+<li>And a lot more</li>
+</ul>
+<br>
+<br>
+<b>GitHub</b> <i class="fa fa-github fa-2x plain"></i><br>
+Hosting service for git, free for public projects.<br>
+<ul>
+<li>Provides graphical web interface</li>
+<li>Collaboration via Pull Requests</li>
+</ul>
+</td></tr></table>
+</section>
+<section>
+<h3>Why git and GitHub?</h3>
+<table><tr><td>
+As of April 2017, GitHub reports having almost 20 million users and 57 million repositories.
+<a href="https://github.com/sap"><img src="./img/logos/sap.png" class="plain" width="400px"></a>
+<a href="https://github.com/torvalds/linux"><img src="./img/logos/linux.png" class="plain" width="400px"></a>
+<br>
+<a href="https://github.com/microsoft"><img src="./img/logos/microsoft.png" class="plain" width="250px"></a>
+<a href="https://github.com/google"><img src="./img/logos/google.png" class="plain" width="250px"></a>
+<a href="https://github.com/facebook"><img src="./img/logos/facebook.png" class="plain" width="250px"></a>
+</td></tr></table>
+</section>
+</section>
+
+<section>
+<table>
+<tr><td colspan="2"><i class="fa fa-git fa plain"></i> <b>client for ABAP</b></td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started ~3 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>~1800 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>26 contributors</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~50000 lines</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-versions"></i></td><td>7.02 and up</td></tr>
+</table>
+</section>
+
+
+
+<section>
+<section>
+<h3>Articles and Presentations, 2014</h3>
+<p><a href="http://blogs.sap.com/2014/07/17/git-client-for-abap-alpha-release/">Git client for ABAP – alpha release</a>
+-Lars Hvam</p>
+</section>
+
+<section>
+<h3>Articles and Presentations, 2016</h3>
+<table><tr><td>
+<p><a href="http://searchsap.techtarget.com/answer/How-can-I-use-Git-and-GitHub-for-SAP-software-development">How can I use Git and GitHub for SAP software development?</a>
+-Ethan Jewett</p>
+
+<p><a href="http://searchsap.techtarget.com/tip/Implementing-modern-practices-in-an-ABAP-development-shop">Implementing modern practices in an ABAP development shop</a>
+-Ethan Jewett</p>
+
+<p><a href="https://larshp.github.io/sithh2016/">SAP Inside Track Hamburg</a>
+-Lars Hvam</p>
+
+<p><a href="https://www.slideshare.net/h_neumann/what-the-git-sap-inside-track-munich-2016">SAP Inside Track Munich</a>
+-Hendrik Neumann</p>
+
+<p><a href="https://larshp.github.io/teched-2016-emea/">SAP Teched Barcelona</a>
+-Lars Hvam</p>
+</td></tr></table>
+</section>
+
+<section>
+<h3>Articles and Presentations, 2017</h3>
+<table><tr><td>
+<p><a href="https://larshp.github.io/dkom2017/">SAP d-kom Karlsruhe</a>
+-Lars Hvam</p>
+
+<p><a href="https://themanmountain.github.io/2017/04/19/first_look_at_abapgit.html">First look at ABAPGit &amp; ideas on a feature</a>
+-Alex Cook</p>
+
+<p><a href="https://larshp.github.io/sitbal2017/">SAP Inside Track Ballerup</a>, May 6th
+-Lars Hvam</p>
+
+<p><a href="https://blogs.sap.com/2017/05/07/abap-using-git-for-safety-and-transparency/">ABAP – Using git for safety and transparency</a>
+-Lars Hvam</p>
+
+<p><a href="https://blogs.sap.com/2017/06/21/abapgit-so-easy/">abapGit – so easy</a>
+-Graham Robinson</p>
+
+<p>SAUG National Summit 2017
+-Graham Robinson</p>
+
+<p>SAP Teched Las Vegas
+-Graham Robinson</p>
+
+<p><a href="http://www.itconferencesap.com/">IT Conference on SAP Technologies</a>, Cluj
+-Lars Hvam</p>
+</td></tr></table>
+</section>
+</section>
+
+<section>
+<img src=./img/trending.png class="plain" height="500px">
+</section>
+
+<section>
+<section>
+<h3>Serialization</h3>
+<img src="img/hello.png" class="plain">
+</section>
+<section>
+<u>zhello.prog.abap</u>
+<pre><code class="language-abap">REPORT zhello.
+
+WRITE 'hello'.
+</code></pre>
+<u>zhello.prog.xml</u>
+<pre><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;abapGit version=&quot;v1.0.0&quot; serializer=&quot;LCL_OBJECT_PROG&quot; serializer_version=&quot;v1.0.0&quot;&gt;
+ &lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;
+  &lt;asx:values&gt;
+   &lt;PROGDIR&gt;
+    &lt;NAME&gt;ZHELLO&lt;/NAME&gt;
+    &lt;STATE&gt;A&lt;/STATE&gt;
+    &lt;VARCL&gt;X&lt;/VARCL&gt;
+    &lt;SUBC&gt;1&lt;/SUBC&gt;
+    &lt;RLOAD&gt;E&lt;/RLOAD&gt;
+    &lt;FIXPT&gt;X&lt;/FIXPT&gt;
+    &lt;UCCHECK&gt;X&lt;/UCCHECK&gt;
+   &lt;/PROGDIR&gt;
+   &lt;TPOOL&gt;
+    &lt;item&gt;
+     &lt;ID&gt;R&lt;/ID&gt;
+     &lt;ENTRY&gt;test&lt;/ENTRY&gt;
+     &lt;LENGTH&gt;4&lt;/LENGTH&gt;
+    &lt;/item&gt;
+   &lt;/TPOOL&gt;
+  &lt;/asx:values&gt;
+ &lt;/asx:abap&gt;
+&lt;/abapGit&gt;
+</code></pre>
+</section>
+</section>
+
+<section>
+<h3>Whoot?</h3>
+<img src="img/abapgit_1_33_3.png" class="plain" width="800px">
+</section>
+
+
+<section>
+<h3>Use case: Share/Collaborate</h3>
+<br>
+<table><tr><td>
+<i class="mega-octicon more-mega octicon-git-branch"></i></td><td>Fork</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-commit"></i></td><td>Commit</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-pull-request"></i></td><td>Create Pull Request</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-thumbsup"></i></td><td>Review</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-merge"></i></td><td>Merge</td></tr>
+</table>
+<a href="https://guides.github.com/introduction/flow/">Understanding the GitHub Flow</a>
+
+</section>
+
+<section>
+<h3>Use case: Extra visibility/backup</h3>
+<img src="img/abapgitserver_170429_1.png" class="plain" height="500px"><br>
+</section>
+
+<section>
+<h2>#ABAPisNotDead</h2>
+<table>
+<tr><td>
+<h3>Link</h3></td><td>
+<a href="http://abapgit.org">http://abapgit.org</a>
+</td></tr>
+<tr><td>
+<h3>Twitter</h3></td><td>
+<a href="https://twitter.com/LarsHvam">@LarsHvam</a>
+</td></tr>
+</table>
+<i class="fa fa-sun-o plain"></i>
+</section>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<script src="squares.js"></script>
+
+<script src="ext/reveal.js-3.3.0/lib/js/head.min.js"></script>
+<script src="ext/reveal.js-3.3.0/js/reveal.js"></script>
+
+<script>
+// More info https://github.com/hakimel/reveal.js#configuration
+/*global Reveal squaresSlideReady squaresSlideChanged*/
+Reveal.initialize({
+	history: true,
+	slideNumber: true,
+	// More info https://github.com/hakimel/reveal.js#dependencies
+	dependencies: [
+		{ src: 'ext/reveal.js-3.3.0/plugin/notes/notes.js', async: true },
+	]
+});
+Reveal.addEventListener('ready', squaresSlideReady);
+Reveal.addEventListener('slidechanged', squaresSlideChanged);
+</script>
+<script src="ext/prism/prism.js"></script>
+
+</body>
+</html>
