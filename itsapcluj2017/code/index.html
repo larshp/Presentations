@@ -1,6 +1,9 @@
 <html>
 	<head>
-	  <title>Code</title>
+	  <title>Caring about ABAP Code</title>
+
+	  <link rel="stylesheet" href="ext/font-awesome-4.6.3/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="ext/octicons/octicons.css">
 		<link rel="stylesheet" href="ext/reveal.js-3.5.0/css/reveal.css">
 		<link rel="stylesheet" href="ext/reveal.js-3.5.0/css/theme/night.css">
 		<link rel="stylesheet" href="ext/prism-1.8.1/themes/prism.css" />
@@ -9,7 +12,28 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section><h1>Code!</h1>Slide 1</section>
+
+<section><h2>Caring about ABAP</h2>
+<b>IT Conference on SAP Technologies, 2017</b>
+</section>
+
+<section>
+<table>
+<tr>
+<td><a href="https://twitter.com/LarsHvam"><i class="fa fa-twitter fa-5x plain"></i></a></td>
+<td valign="middle"><a href="https://twitter.com/LarsHvam">@LarsHvam</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/larshp"><i class="fa fa-github fa-5x plain"></i></a></td>
+<td><a href="https://github.com/larshp">larshp</a></td>
+</tr>
+</table>
+</section>
+
+<section>
+<h3>Disclaimer</h3>
+<img src="img/choco.jpg" class="plain">
+</section>
 
 <section>
 <h3>Fibonacci</h3>
@@ -28,10 +52,10 @@ fib(13);
 
 <section><h3>Fibonacci in ABAP</h3>
 <table><tr><td><pre class="stretch">REPORT zfib01.
-PARAMETERS: p_n TYPE i DEFAULT 13.
-START-OF-SELECTION.
-PERFORM run.
-DATA r TYPE i.
+PARAMETERs: p_n TYPE i DEFAULT 13.
+START-of-SELECTION.
+PERform run.
+DATA: r TYPE i, b.
 FORM run.
 PERFORM f USING p_n r.
 WRITE r.
@@ -43,10 +67,11 @@ DATA: r1 TYPE p,
 r2 TYPE f.
 CLEAR r1.
 n2 = n - 1. n1 = n2  - 1.
-IF n = 1.
+if n = 1.
 r = n.
 ELSEIF n:= 2.
-r = n - 1.
+MOVE n TO r.
+SUBTRACT 1 FrOm r.
 ELSE.
 PERFORM f USING: n1
 r2, n2 r1.
@@ -56,17 +81,168 @@ ENDFORM.</pre></td></tr></table>
 </section>
 
 <section>
-blah
+blah<br>
+design your code to be tested<br>
+find tweets omkring code review<br>
+	+ static code analysis<br>
+	+ manual code review<br>
+	+ automatic testing<br>
 </section>
 
 <section>
-<h3>Disclaimer</h3>
-<img src="img/choco.jpg" class="plain">
+<table>
+<tr><td colspan="2"><b>abapOpenChecks</b><br>
+Extra checks for SCI/ATC</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 2 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>600 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>1 contributor</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~28000 lines</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-versions"></i></td><td>7.02 and up</td></tr>
+</table>
 </section>
 
 <section>
-blah
+<section>
+<h3>Checks</h3>
+<table><tr><td>
+01 - IF in IF<br>
+02 - EXIT or CHECK outside of loop<br>
+03 - Wrong use of TRY-CATCH<br>
+04 - Line length<br>
+05 - 7 bit ASCII<br>
+06 - Check for use of pretty printer<br>
+07 - Functional writing style for CALL METHOD<br>
+08 - Obsolete statement<br>
+<li class="small">CHECK_09 - Tab instead of spaces
+<li class="small">CHECK_10 - Use icon_ constants
+<li class="small">CHECK_11 - Max one statement per line
+<li class="small">CHECK_12 - Specify SORT order
+<li class="small">CHECK_13 - Sequential blank lines
+<li class="small">CHECK_14 - Commented code
+<li class="small">CHECK_15 - Kernel CALL
+<li class="small">CHECK_16 - Line contains only . or ).
+<li class="small">CHECK_17 - Definitions in top of routine
+<li class="small">CHECK_18 - Empty branch
+<li class="small">CHECK_19 - Use LINE OF
+<li class="small">CHECK_20 - Bad indentation
+</td></tr></table>
 </section>
+<section>
+	<table><tr><td>
+<li class="small">CHECK_21 - Unused FORM parameter
+<li class="small">CHECK_22 - Conditions contain identical code
+<li class="small">CHECK_23 - Chained Statements
+<li class="small">CHECK_24 - Identical code blocks
+<li class="small">CHECK_25 - Selection screen data not referenced statically
+<li class="small">CHECK_26 - No direct changes to standard tables
+<li class="small">CHECK_27 - Last statement is RETURN
+<li class="small">CHECK_28 - Space before . or ,
+<li class="small">CHECK_29 - Naming, Local test classes
+<li class="small">CHECK_30 - EXPORTING can be omitted
+<li class="small">CHECK_31 - Extended Program Check, Filterable
+<li class="small">CHECK_32 - Database access
+<li class="small">CHECK_33 - Append structure field names
+<li class="small">CHECK_34 - Large WHEN construct
+<li class="small">CHECK_35 - Message not in use
+<li class="small">CHECK_36 - Exception text not in use
+<li class="small">CHECK_37 - Define message texts in SE91
+<li class="small">CHECK_38 - Avoid use of SELECT-ENDSELECT
+<li class="small">CHECK_39 - Smartforms global definitions naming conventions
+<li class="small">CHECK_40 - Check SY-SUBRC
+</td></tr></table>
+</section>
+<section>
+	<table><tr><td>
+<li class="small">CHECK_41 - Empty line in statement
+<li class="small">CHECK_42 - Identical WHEN code
+<li class="small">CHECK_43 - Parameter name can be omitted
+<li class="small">CHECK_44 - EXPORTING can be changed to RETURNING
+<li class="small">CHECK_45 - Use expressions
+<li class="small">CHECK_46 - Shadowed variable
+<li class="small">CHECK_47 - RFC call error handling
+<li class="small">CHECK_48 - Table DEFAULT KEY
+<li class="small">CHECK_49 - Double space
+<li class="small">CHECK_50 - ASSERT and unit test ASSERT
+add more, todo
+</td></tr></table>
+</section>
+</section>
+
+<section>
+<h3>Background</h3>
+<table><tr><td>
+<li>Based on real life examples
+<li>All checks configurable<br>
+<img src="default_conf.png" class="plain"><br>
+<li><a href="https://github.com/larshp/upDOWNci">upDOWNci</a>
+</td></tr></table>
+</section>
+
+<section>
+<h3>CHECK_07 - Functional style</h3>
+<pre><code class="language-abap">CALL METHOD lo_columns->set_count_column
+  EXPORTING
+    value = 'FOOBAR'.</code></pre>
+<pre><code class="language-abap">lo_columns->set_count_column( EXPORTING value = 'FOOBAR' ).</code></pre>
+</section>
+
+<section>
+<h3>CHECK_30 - EXPORTING</h3>
+<pre><code class="language-abap">lo_columns->set_count_column( EXPORTING value = 'FOOBAR' ).</code></pre>
+<pre><code class="language-abap">lo_columns->set_count_column( value = 'FOOBAR' ).</code></pre>
+</section>
+
+<section>
+<h3>CHECK_43 - Parameter name</h3>
+<pre><code class="language-abap">lo_columns->set_count_column( value = 'FOOBAR' ).</code></pre>
+<pre><code class="language-abap">lo_columns->set_count_column( 'FOOBAR' ).</code></pre>
+</section>
+
+<section>
+<table>
+<tr><td colspan="2"><b>abaplint</b><br>
+ABAP linter</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 2 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>600 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>1 contributor</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~16000 lines</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-versions"></i></td><td>Browser</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-versions"></i></td><td>Node.js</td></tr>
+</table>
+</section>
+
+<section>
+<h3>abaplint</h3>
+<img src="img/abaplint.png" class="plain">
+</section>
+
+<section>
+<h3>syntax trees</h3>
+todo
+</section>
+
+<section>
+andre SAP events<br>
+see you in barcelona<br>
+</section>
+
+<section>
+<h2>#ABAPisNotDead</h2>
+<a href="https://larshp.github.io/Presentations/itsapcluj2017/code">https://larshp.github.io/Presentations/itsapcluj2017/code</a>
+<br><br>
+<table>
+<tr><td>
+<h3>Contribute</h3></td><td>
+<a href="http://abapopenchecks.org">http://abapopenchecks.org</a>
+</td></tr>
+<tr><td>
+<h3>Twitter</h3></td><td>
+<a href="https://twitter.com/LarsHvam">@LarsHvam</a>
+</td></tr>
+</table>
+<i class="fa fa-sun-o plain"></i>
+</section>
+
 			</div>
 		</div>
 		<script src="ext/reveal.js-3.5.0/js/reveal.js"></script>
