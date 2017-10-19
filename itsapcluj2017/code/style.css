@@ -1,0 +1,5 @@
+.reveal table {
+  color: white;
+}
+.reveal pre code {
+  overflow: inherit; }
