@@ -67,9 +67,9 @@ PERFORM f USING p_n r.
 WRITE r.
 ENDFORM.</pre></td><td><pre class="stretch">* this form calculates fibonac numbers
 FORM f USING n r.
-DATA n1 TYPE i.DATA: n2
-TYPE i.
-DATA: r1 TYPE p,
+data n1 TYPE i.DATA: n2
+type i.
+data: r1 TYPE p,
 r2 TYPE f.
 CLEAR r1.
 n2 = n - 1. n1 = n2  - 1.
@@ -95,7 +95,7 @@ ENDFORM.</pre></td></tr></table>
 <h3>Static code analysis</h3>
 <li>ATC/SCI
 <h3>Manual code review</h3>
-<li>emails?
+<li>Tools?
 <h3>Automatic testing</h3>
 <li>ABAP Unit
 <li>Design your code to be tested
@@ -105,7 +105,7 @@ ENDFORM.</pre></td></tr></table>
 
 <section>
 <h3>SCI/ATC</h3>
-todo, image
+<img src="img/sci.png" class="plain">
 </section>
 
 <section>
@@ -116,7 +116,7 @@ todo, image
 <table>
 <tr><td colspan="2"><b>abapOpenChecks</b><br>
 Extra checks for SCI/ATC</td></tr>
-<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 2 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 3 years ago</td></tr>
 <tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>600 commits</td></tr>
 <tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>1 contributor</td></tr>
 <tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~28000 lines</td></tr>
@@ -243,6 +243,18 @@ Extra checks for SCI/ATC</td></tr>
 </section>
 
 <section>
+<h3>Open Source Collaboration</h3>
+<table><tr><td>
+<i class="mega-octicon more-mega octicon-git-branch"></i></td><td>Fork</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-commit"></i></td><td>Commit</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-pull-request"></i></td><td>Create Pull Request</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-thumbsup"></i></td><td>Review</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-merge"></i></td><td>Merge</td></tr>
+</table>
+<a href="https://guides.github.com/introduction/flow/">Understanding the GitHub Flow</a>
+</section>
+
+<section>
 <table>
 <tr><td colspan="2"><b>abaplint</b><br>
 ABAP linter</td></tr>
@@ -256,13 +268,13 @@ ABAP linter</td></tr>
 </section>
 
 <section>
-<h3>abaplint</h3>
-<img src="img/abaplint.png" class="plain">
+<h3>Syntax Trees</h3>
+<img src="img/trees.png" class="plain">
 </section>
 
 <section>
-<h3>syntax trees</h3>
-todo
+<h3>abaplint</h3>
+<img src="img/abaplint.png" class="plain">
 </section>
 
 <section>
@@ -282,6 +294,10 @@ Hope to see you in Barcelona<br>
 <tr><td>
 <h3>Contribute</h3></td><td>
 <a href="http://abapopenchecks.org">http://abapopenchecks.org</a>
+</td></tr>
+<tr><td>
+<h3>Contribute</h3></td><td>
+<a href="http://github.com/larshp/abaplint">http://github.com/larshp/abaplint</a>
 </td></tr>
 <tr><td>
 <h3>Twitter</h3></td><td>
