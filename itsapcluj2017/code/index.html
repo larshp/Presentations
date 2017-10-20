@@ -61,7 +61,7 @@ fib(13);
 PARAMETERs: p_n TYPE i DEFAULT 13.
 START-of-SELECTION.
 PERform run.
-DATA: r TYPE i, b.
+DATA: r TYPE i,     b.
 FORM run.
 PERFORM f USING p_n r.
 WRITE r.
@@ -69,13 +69,13 @@ ENDFORM.</pre></td><td><pre class="stretch">* this form calculates fibonac numbe
 FORM f USING n r.
 data n1 TYPE i.DATA: n2
 type i.
-data: r1 TYPE p,
+data: r1   TYPE p,
 r2 TYPE f.
 CLEAR r1.
 n2 = n - 1. n1 = n2  - 1.
 if n = 1.
 r = n.
-ELSEIF n:= 2.
+ELSEIF         n:= 2.
 MOVE n TO r.
 SUBTRACT 1 FrOm r.
 ELSE.
@@ -129,6 +129,7 @@ Extra checks for SCI/ATC</td></tr>
 <h3>Background</h3>
 <table><tr><td>
 <li>Based on real life examples
+<li>Fix false positives
 <li>All checks configurable<br>
 <img src="img/default_conf.png" class="plain"><br>
 <li><a href="https://github.com/larshp/upDOWNci">upDOWNci</a>
@@ -139,83 +140,83 @@ Extra checks for SCI/ATC</td></tr>
 <section>
 <h3>Checks</h3>
 <table><tr><td>
-01 - IF in IF<br>
-02 - EXIT or CHECK outside of loop<br>
-03 - Wrong use of TRY-CATCH<br>
-04 - Line length<br>
+<font color="#00FF00">01</font>x - IF in IF<br>
+<font color="#00FF00">02</font> - EXIT or CHECK outside of loop<br>
+<font color="#00FF00">03</font>x - Wrong use of TRY-CATCH<br>
+<font color="#00FF00">04</font> - Line length<br>
 05 - 7 bit ASCII<br>
 06 - Check for use of pretty printer<br>
-07 - Functional writing style for CALL METHOD<br>
-08 - Obsolete statement<br>
+<font color="#00FF00">07</font> - Functional writing style for CALL METHOD<br>
+<font color="#00FF00">08</font> - Obsolete statement<br>
 09 - Tab instead of spaces<br>
-10 - Use icon_ constants<br>
-11 - Max one statement per line<br>
+<font color="#00FF00">10</font> - Use icon_ constants<br>
+<font color="#00FF00">11</font> - Max one statement per line<br>
 </td></tr></table>
 </section>
 <section>
 	<table><tr><td>
-12 - Specify SORT order<br>
+<font color="#00FF00">12</font> - Specify SORT order<br>
 13 - Sequential blank lines<br>
 14 - Commented code<br>
-15 - Kernel CALL<br>
-16 - Line contains only . or ).<br>
-17 - Definitions in top of routine<br>
-18 - Empty branch<br>
-19 - Use LINE OF<br>
-20 - Bad indentation<br>
-21 - Unused FORM parameter<br>
-22 - Conditions contain identical code<br>
-23 - Chained Statements<br>
-24 - Identical code blocks<br>
+<font color="#00FF00">15</font> - Kernel CALL<br>
+<font color="#00FF00">16</font> - Line contains only . or ).<br>
+<font color="#00FF00">17</font> - Definitions in top of routine<br>
+<font color="#00FF00">18</font> - Empty branch<br>
+<font color="#00FF00">19</font> - Use LINE OF<br>
+<font color="#00FF00">20</font> - Bad indentation<br>
+<font color="#00FF00">21</font> - Unused FORM parameter<br>
+<font color="#00FF00">22</font> - Conditions contain identical code<br>
+<font color="#00FF00">23</font> - Chained Statements<br>
+<font color="#00FF00">24</font>x - Identical code blocks<br>
 </td></tr></table>
 </section>
 <section>
 	<table><tr><td>
-25 - Selection screen data not referenced<br>
+<font color="#00FF00">25</font> - Selection screen data not referenced<br>
 26 - No direct changes to standard tables<br>
-27 - Last statement is RETURN<br>
-28 - Space before . or ,<br>
-29 - Naming, Local test classes<br>
-30 - EXPORTING can be omitted<br>
+<font color="#00FF00">27</font> - Last statement is RETURN<br>
+<font color="#00FF00">28</font> - Space before . or ,<br>
+<font color="#00FF00">29</font>x - Naming, Local test classes<br>
+<font color="#00FF00">30</font> - EXPORTING can be omitted<br>
 31 - Extended Program Check, Filterable<br>
-32 - Database access<br>
+<font color="#00FF00">32</font> - Database access<br>
 33 - Append structure field names<br>
-34 - Large WHEN construct<br>
+<font color="#00FF00">34</font> - Large WHEN construct<br>
 35 - Message not in use<br>
 36 - Exception text not in use<br>
-37 - Define message texts in SE91<br>
+<font color="#00FF00">37</font> - Define message texts in SE91<br>
 </td></tr></table>
 </section>
 <section>
 	<table><tr><td>
-38 - Avoid use of SELECT-ENDSELECT<br>
+<font color="#00FF00">38</font> - Avoid use of SELECT-ENDSELECT<br>
 39 - Smartforms global definitions naming<br>
-40 - Check SY-SUBRC<br>
-41 - Empty line in statement<br>
-42 - Identical WHEN code<br>
+<font color="#00FF00">40</font> - Check SY-SUBRC<br>
+<font color="#00FF00">41</font> - Empty line in statement<br>
+<font color="#00FF00">42</font> - Identical WHEN code<br>
 43 - Parameter name can be omitted<br>
 44 - EXPORTING can be changed to RETURNING<br>
-45 - Use expressions<br>
+<font color="#00FF00">45</font>x - Use expressions<br>
 46 - Shadowed variable<br>
-47 - RFC call error handling<br>
+<font color="#00FF00">47</font> - RFC call error handling<br>
 48 - Table DEFAULT KEY<br>
-49 - Double space<br>
+<font color="#00FF00">49</font>x - Double space<br>
 50 - ASSERT and unit test ASSERT<br>
 </td></tr></table>
 </section>
 <section>
 	<table><tr><td>
-51 - Open SQL - Escape host variables<br>
+51x - Open SQL - Escape host variables<br>
 52 - Pragma placement<br>
-53 - Function module recommendations<br>
-54 - CALL TRANSACTION authority check<br>
-55 - Statements can be chained<br>
+<font color="#00FF00">53</font> - Function module recommendations<br>
+<font color="#00FF00">54</font> - CALL TRANSACTION authority check<br>
+<font color="#00FF00">55</font> - Statements can be chained<br>
 56 - Method parameters<br>
-57 - MESSAGE or list processing in global classes<br>
+<font color="#00FF00">57</font> - MESSAGE or list processing in global classes<br>
 58 - Method not referenced statically<br>
-59 - Logical expression structure<br>
-60 - Concatenation of string templates<br>
-62 - LOOP simplification/performance<br>
+<font color="#00FF00">59</font> - Logical expression structure<br>
+<font color="#00FF00">60</font> - Concatenation of string templates<br>
+<font color="#00FF00">62</font> - LOOP simplification/performance<br>
 63 - ABAP Doc - Check parameter consistency<br>
 64 - Unit test not covering class<br>
 </td></tr></table>
@@ -293,7 +294,7 @@ whitespace_end<br>
 	</section>
 
 <section>
-<h3>Syntax Trees</h3>
+<h3>Syntax Trees!</h3>
 <img src="img/trees.png" class="plain">
 </section>
 
