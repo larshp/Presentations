@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>abapGit</title>
+        <link rel="icon" href="img/favicon.png?v=2" />
+
+		<link rel="stylesheet" href="ext/font-awesome-4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="ext/octicons/octicons.css">
+		<link rel="stylesheet" href="ext/prism/prism.css" />
+		<link rel="stylesheet" href="ext/reveal.js-3.3.0/css/reveal.css">
+		<link rel="stylesheet" href="theme.css">
+		<link rel="stylesheet" href="squares.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="ext/reveal.js-3.3.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'ext/reveal.js-3.3.0/css/print/pdf.css' : 'ext/reveal.js-3.3.0/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section>
+<img src="img/logo.svg" class="plain"><br>
+<b>NET53819, SAP TechEd Barcelona, 2017</b>
+</section>
+
+<section>
+<table>
+<tr>
+<td><a href="https://twitter.com/LarsHvam"><i class="fa fa-twitter fa-4x plain"></i></a></td>
+<td valign="middle"><a href="https://twitter.com/LarsHvam">@LarsHvam</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/larshp"><i class="fa fa-github fa-4x plain"></i></a></td>
+<td><a href="https://github.com/larshp">larshp</a></td>
+</tr>
+<tr>
+<td><a href="http://invixo.com"><i class="fa fa-briefcase fa-4x plain"></i></a></td>
+<td><a href="http://invixo.com">INVIXO.com</a></td>
+</tr>
+</table>
+</section>
+
+<section>
+<table>
+<tr><td colspan="2"><i class="fa fa-git fa plain"></i> <b>client for ABAP</b></td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started ~3 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>~2000 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>30 contributors</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~55000 lines</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-versions"></i></td><td>7.02 and up</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-credit-card"></i></td><td>MIT License</td></tr>
+</table>
+</section>
+
+<section>
+<table>
+<tr>
+<td nowrap><a href="https://github.com/sbcgua/">Alexander Tsybulsky</a></td>
+<td nowrap><a href="https://github.com/EduardoCopat/">Eduardo Copat</a></td>
+<td nowrap><a href="https://github.com/Gekke-Jakke/">Geert-Jan Klaps</a></td>
+</tr>
+
+<tr>
+<td nowrap><a href="https://github.com/mrsimpson/">Oliver Jägle</a></td>
+<td nowrap><a href="https://github.com/sshlapak/">Svitlana Shlapak</a></td>
+<td nowrap><a href="https://github.com/ivanfemia/">Ivan Femia</a></td>
+</tr>
+
+<tr>
+<td nowrap><a href="https://github.com/VishnAndr/">Andrei Vishnevsky</a></td>
+<td nowrap><a href="https://github.com/RedWolf112/">Pascal</a></td>
+<td nowrap><a href="https://github.com/ElNovi/">Lukáš Novák</a></td>
+</tr>
+
+<tr>
+<td nowrap><a href="https://github.com/grahamrobbo/">Graham Robinson</a></td>
+<td nowrap><a href="https://github.com/gregorwolf/">Gregor Wolf</a></td>
+<td nowrap><a href="https://github.com/mkaesemann/">mkaesemann</a></td>
+</tr>
+
+<tr>
+<td nowrap><a href="https://github.com/nununo/">Nuno Godinho</a></td>
+<td nowrap><a href="https://github.com/Sirius-A/">Fabio Zuber</a></td>
+<td nowrap><a href="https://github.com/insidy/">insidy</a></td>
+</tr>
+
+<tr>
+<td nowrap><a href="https://github.com/flaiker/">Fabian Lupa</a></td>
+<td nowrap><a href="https://github.com/christianguenter2/">Christian Günter</a></td>
+<td nowrap><a href="https://github.com/apex8/">apex8</a></td>
+</tr>
+
+<tr>
+<td nowrap><a href="https://github.com/christian1020-94/">Christian Tapia Sabogal</a></td>
+<td nowrap><a href="https://github.com/bigld/">Domi Bigl</a></td>
+<td nowrap><a href="https://github.com/christianp86/">Christian Pfisterer</a></td>
+</tr>
+
+<tr>
+<td nowrap><a href="https://github.com/tiefox/">Giovanni Degani</a></td>
+<td nowrap><a href="https://github.com/kvtorp/">Kasper Vilhelm Torp</a></td>
+<td nowrap><a href="https://github.com/filak-sap/">Jakub Filak</a></td>
+</tr>
+
+<tr>
+<td nowrap><a href="https://github.com/pfaller/">Christian Pfaller</a></td>
+<td nowrap><a href="https://github.com/alexanderchan/">Alex Chan</a></td>
+<td nowrap><a href="https://github.com/thomas-erdoesi/">Thomas Erdoesi</a></td>
+</tr>
+
+<tr>
+<td nowrap><a href="https://github.com/TheWirtschaftsmann/">Bohdan Petrushchak</a></td>
+<td nowrap><a href="https://github.com/sdf/"></a></td>
+<td nowrap><a href="https://github.com/sdf/"></a></td>
+</tr>
+
+</table>
+
+</section>
+
+<section>
+<h3>Design Goals</h3>
+<ul>
+<li>Easy installation</li>
+<li>Easy upgrade</li>
+<li>Small system footprint</li>
+<li>Code readable in git repository</li>
+</ul>
+</section>
+
+
+<section>
+<h3>Use case: Share/Collaborate</h3>
+<br>
+<table><tr><td>
+<i class="mega-octicon more-mega octicon-git-branch"></i></td><td>Fork</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-commit"></i></td><td>Commit</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-pull-request"></i></td><td>Create Pull Request</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-thumbsup"></i></td><td>Review</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-merge"></i></td><td>Merge</td></tr>
+</table>
+<a href="https://guides.github.com/introduction/flow/">Understanding the GitHub Flow</a>
+</section>
+
+<section>
+<section>
+<h3>Use case: Extra visibility/backup</h3>
+<img src="img/abapgitserver_170429_1.png" class="plain" height="500px"><br>
+<a href="https://github.com/larshp/abapGit/wiki/Using-abapGit-and-abapGitServer-for-regular-backup">abapGitServer Setup Guide</a>
+</section>
+
+<section>
+<img src="img/abapgitserver_170429_2.png" class="plain"><br>
+</section>
+
+<section>
+<img src="img/abapgitserver_170429_3.png" class="plain"><br>
+</section>
+</section>
+
+<section>
+<h3>Use case: Code retirement</h3>
+sdf
+</section>
+
+<section>
+<h2>Latest #1: cloud</h2>
+<img src="img/abaponsapcp.png" class="plain"><br>
+</section>
+
+<section>
+<h2>Latest #2: dotabap.org</h2>
+Labs Preview<br>
+<img src="img/dotabap.png" class="plain"><br>
+</section>
+
+<section>
+<h3>Focus</h3>
+sdf
+</section>
+
+<section>
+<h2>#ABAPisNotDead</h2>
+<a href="https://larshp.github.io/Presentations/itsapcluj2017/abapgit">https://larshp.github.io/Presentations/teched-2017-emea</a>
+<br><br>
+<table>
+<tr><td>
+<h3>Contribute</h3></td><td>
+<a href="http://abapgit.org">http://abapgit.org</a>
+</td></tr>
+<tr><td>
+<h3>Twitter</h3></td><td>
+<a href="https://twitter.com/LarsHvam">@LarsHvam</a>
+</td></tr>
+</table>
+<i class="fa fa-sun-o plain"></i>
+</section>
+</div>
+</div>
+
+</div>
+</div>
+
+<script src="squares.js"></script>
+
+<script src="ext/reveal.js-3.3.0/lib/js/head.min.js"></script>
+<script src="ext/reveal.js-3.3.0/js/reveal.js"></script>
+
+<script>
+// More info https://github.com/hakimel/reveal.js#configuration
+/*global Reveal squaresSlideReady squaresSlideChanged*/
+Reveal.initialize({
+	history: true,
+	slideNumber: true,
+	// More info https://github.com/hakimel/reveal.js#dependencies
+	dependencies: [
+		{ src: 'ext/reveal.js-3.3.0/plugin/notes/notes.js', async: true },
+	]
+});
+Reveal.addEventListener('ready', squaresSlideReady);
+Reveal.addEventListener('slidechanged', squaresSlideChanged);
+</script>
+<script src="ext/prism/prism.js"></script>
+
+</body>
+</html>
