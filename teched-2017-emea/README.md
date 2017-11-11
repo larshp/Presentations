@@ -1,4 +1,3 @@
-# sitbal2017
-SAP Inside Track Ballerup 2017
+# teched-2017-emea
 
-https://larshp.github.io/sitbal2017/
+https://larshp.github.io/Presentations/teched-2017-emea/
