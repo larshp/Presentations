@@ -1,0 +1,376 @@
+<html>
+	<head>
+	  <title>Caring about ABAP Code</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	  <link rel="stylesheet" href="ext/font-awesome-4.6.3/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="ext/octicons/octicons.css">
+		<link rel="stylesheet" href="ext/reveal.js-3.5.0/css/reveal.css">
+		<link rel="stylesheet" href="ext/prism-1.8.1/themes/prism.css" />
+		<link rel="stylesheet" href="theme.css">
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<section><h2>Caring about ABAP</h2>
+<b>sitCPH, 2017</b>
+</section>
+
+<section>
+<table>
+<tr>
+<td><a href="https://twitter.com/LarsHvam"><i class="fa fa-twitter fa-4x plain"></i></a></td>
+<td valign="middle"><a href="https://twitter.com/LarsHvam">@LarsHvam</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/larshp"><i class="fa fa-github fa-4x plain"></i></a></td>
+<td><a href="https://github.com/larshp">larshp</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://invixo.com"><img src="img/invixo2.svg" class="plain"></a><td>
+</tr>
+</table>
+</section>
+
+<section>
+<h3>Disclaimer</h3>
+<img src="img/choco.jpg" class="plain">
+</section>
+
+<section>
+<h3>Fibonacci</h3>
+<pre><code class="language-javascript">
+function fib(n) {
+  if (n <= 2) {
+    return 1;
+  } else {
+    return fib(n-1) + fib(n-2);
+  }
+}
+
+fib(13);
+</code>
+</pre>
+</section>
+
+<section><h3>Fibonacci in ABAP</h3>
+<table><tr><td><pre class="stretch">REPORT zfib01.
+PARAMETERs: p_n TYPE i DEFAULT 13.
+START-of-SELECTION.
+PERform run.
+DATA: r TYPE i,     b.
+FORM run.
+PERFORM f USING p_n r.
+WRITE r.
+ENDFORM.</pre></td><td><pre class="stretch">* this form calculates fibonac numbers
+FORM f USING n r.
+data n1 TYPE i.DATA: n2
+type i.
+data: r1   TYPE p,
+r2 TYPE f.
+CLEAR r1.
+n2 = n - 1. n1 = n2  - 1.
+if n = 1.
+r = n.
+ELSEIF         n:= 2.
+MOVE n TO r.
+SUBTRACT 1 FrOm r.
+ELSE.
+PERFORM f USING: n1
+r2, n2 r1.
+*    PERFORM f USING n2.
+ENDIF . r = r + r1 + r2.
+ENDFORM.</pre></td></tr></table>
+</section>
+
+<section>
+<a href="https://medium.com/javascript-scene/the-outrageous-cost-of-skipping-tdd-code-reviews-57887064c412"><img src="img/cost.png" class="plain"></a>
+</section>
+
+<section>
+<table><tr><td>
+<h3>Static code analysis</h3>
+<li>ATC/SCI
+<h3>Manual code review</h3>
+<li>Tools?
+<h3>Automatic testing</h3>
+<li>ABAP Unit
+<li>Design your code to be tested!
+</td></tr>
+</table>
+</section>
+
+<section>
+<h3>SCI/ATC</h3>
+<img src="img/sci.png" class="plain">
+</section>
+
+<section>
+<img src="img/idea.jpg" class="plain">
+</section>
+
+<section>
+<table>
+<tr><td colspan="2"><b>abapOpenChecks</b><br>
+Extra checks for SCI/ATC</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 3 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>600 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>1 contributor</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~28000 lines</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-versions"></i></td><td>7.02 and up</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-credit-card"></i></td><td>MIT License</td></tr>
+</table>
+</section>
+
+<section>
+<h3>Background</h3>
+<table><tr><td>
+<li>Based on real life examples
+<li>Fix false positives
+<li>All checks configurable<br>
+<img src="img/default_conf.png" class="plain"><br>
+<li><a href="https://github.com/larshp/upDOWNci">upDOWNci</a>
+</td></tr></table>
+</section>
+
+<section>
+<section>
+<h3>Checks</h3>
+<table><tr><td>
+<font color="#00FF00">01</font>x - IF in IF<br>
+<font color="#00FF00">02</font> - EXIT or CHECK outside of loop<br>
+<font color="#00FF00">03</font>x - Wrong use of TRY-CATCH<br>
+<font color="#00FF00">04</font> - Line length<br>
+05 - 7 bit ASCII<br>
+06 - Check for use of pretty printer<br>
+<font color="#00FF00">07</font> - Functional writing style for CALL METHOD<br>
+<font color="#00FF00">08</font> - Obsolete statement<br>
+09 - Tab instead of spaces<br>
+<font color="#00FF00">10</font> - Use icon_ constants<br>
+<font color="#00FF00">11</font> - Max one statement per line<br>
+</td></tr></table>
+</section>
+<section>
+	<table><tr><td>
+<font color="#00FF00">12</font> - Specify SORT order<br>
+13 - Sequential blank lines<br>
+14 - Commented code<br>
+<font color="#00FF00">15</font> - Kernel CALL<br>
+<font color="#00FF00">16</font> - Line contains only . or ).<br>
+<font color="#00FF00">17</font> - Definitions in top of routine<br>
+<font color="#00FF00">18</font> - Empty branch<br>
+<font color="#00FF00">19</font> - Use LINE OF<br>
+<font color="#00FF00">20</font> - Bad indentation<br>
+<font color="#00FF00">21</font> - Unused FORM parameter<br>
+<font color="#00FF00">22</font> - Conditions contain identical code<br>
+<font color="#00FF00">23</font> - Chained Statements<br>
+<font color="#00FF00">24</font>x - Identical code blocks<br>
+</td></tr></table>
+</section>
+<section>
+	<table><tr><td>
+<font color="#00FF00">25</font> - Selection screen data not referenced<br>
+26 - No direct changes to standard tables<br>
+<font color="#00FF00">27</font> - Last statement is RETURN<br>
+<font color="#00FF00">28</font> - Space before . or ,<br>
+<font color="#00FF00">29</font>x - Naming, Local test classes<br>
+<font color="#00FF00">30</font> - EXPORTING can be omitted<br>
+31 - Extended Program Check, Filterable<br>
+<font color="#00FF00">32</font> - Database access<br>
+33 - Append structure field names<br>
+<font color="#00FF00">34</font> - Large WHEN construct<br>
+35 - Message not in use<br>
+36 - Exception text not in use<br>
+<font color="#00FF00">37</font> - Define message texts in SE91<br>
+</td></tr></table>
+</section>
+<section>
+	<table><tr><td>
+<font color="#00FF00">38</font> - Avoid use of SELECT-ENDSELECT<br>
+39 - Smartforms global definitions naming<br>
+<font color="#00FF00">40</font> - Check SY-SUBRC<br>
+<font color="#00FF00">41</font> - Empty line in statement<br>
+<font color="#00FF00">42</font> - Identical WHEN code<br>
+43 - Parameter name can be omitted<br>
+44 - EXPORTING can be changed to RETURNING<br>
+<font color="#00FF00">45</font>x - Use expressions<br>
+46 - Shadowed variable<br>
+<font color="#00FF00">47</font> - RFC call error handling<br>
+48 - Table DEFAULT KEY<br>
+<font color="#00FF00">49</font>x - Double space<br>
+50 - ASSERT and unit test ASSERT<br>
+</td></tr></table>
+</section>
+<section>
+	<table><tr><td>
+51x - Open SQL - Escape host variables<br>
+52 - Pragma placement<br>
+<font color="#00FF00">53</font> - Function module recommendations<br>
+<font color="#00FF00">54</font> - CALL TRANSACTION authority check<br>
+<font color="#00FF00">55</font> - Statements can be chained<br>
+56 - Method parameters<br>
+<font color="#00FF00">57</font> - MESSAGE or list processing in global classes<br>
+58 - Method not referenced statically<br>
+<font color="#00FF00">59</font> - Logical expression structure<br>
+<font color="#00FF00">60</font> - Concatenation of string templates<br>
+<font color="#00FF00">62</font> - LOOP simplification/performance<br>
+63 - ABAP Doc - Check parameter consistency<br>
+64 - Unit test not covering class<br>
+</td></tr></table>
+</section>
+
+<section>
+<a href="https://github.com/larshp/abapOpenChecks/wiki">abapOpenChecks Wiki</a>
+</section>
+</section>
+
+<section>
+<h3>CHECK_07 - Functional style</h3>
+<pre><code class="language-abap">CALL METHOD lo_columns->set_count_column
+  EXPORTING
+    value = 'FOOBAR'.</code></pre>
+<pre><code class="language-abap">lo_columns->set_count_column( EXPORTING value = 'FOOBAR' ).</code></pre>
+</section>
+
+<section>
+<h3>CHECK_30 - EXPORTING</h3>
+<pre><code class="language-abap">lo_columns->set_count_column( EXPORTING value = 'FOOBAR' ).</code></pre>
+<pre><code class="language-abap">lo_columns->set_count_column( value = 'FOOBAR' ).</code></pre>
+</section>
+
+<section>
+<h3>CHECK_43 - Parameter name</h3>
+<pre><code class="language-abap">lo_columns->set_count_column( value = 'FOOBAR' ).</code></pre>
+<pre><code class="language-abap">lo_columns->set_count_column( 'FOOBAR' ).</code></pre>
+</section>
+
+<section>
+<h3>Open Source Collaboration</h3>
+<table><tr><td>
+<i class="mega-octicon more-mega octicon-git-branch"></i></td><td>Fork</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-commit"></i></td><td>Commit</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-pull-request"></i></td><td>Create Pull Request</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-thumbsup"></i></td><td>Review</td></tr><tr><td>
+<i class="mega-octicon more-mega octicon-git-merge"></i></td><td>Merge</td></tr>
+</table>
+<a href="https://guides.github.com/introduction/flow/">Understanding the GitHub Flow</a>
+</section>
+
+<section>
+<table>
+<tr><td colspan="2"><b>abaplint</b><br>
+ABAP linter</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 2 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>600 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>1 contributor</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~16000 lines</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-versions"></i></td><td>Browser + Node.js</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-credit-card"></i></td><td>MIT License</td></tr>
+</table>
+</section>
+
+<section>
+	<table><tr><td>
+7bit_ascii<br>
+breakpoint<br>
+colon_missing_space<br>
+contains_tab<br>
+definitions_top<br>
+empty_statement<br>
+exit_or_check<br>
+exporting<br>
+functional_writing<br>
+indentation<br>
+</td><td>
+line_length<br>
+line_only_punc<br>
+max_one_statement<br>
+obsolete_statement<br>
+parser_error<br>
+sequential_blank<br>
+space_before_colon<br>
+start_at_tab<br>
+whitespace_end<br>
+		</td></tr></table>
+	</section>
+
+<section>
+<h3>Syntax Trees!</h3>
+<img src="img/trees.png" class="plain">
+</section>
+
+<section>
+<h3>On Travis CI</h3>
+<img src="img/abaplint.png" class="plain">
+</section>
+
+<section>
+<h2>Whats new?</h2>
+<img src="img/logo.svg" class="plain">
+</section>
+
+<section>
+<h3>Modernizing ABAP Development</h3>
+<table><tr><td>
+Webcast<br>
+Monday, December 11, 2017<br>
+10:00 AM Central Standard Time<br>
+by <a href="https://twitter.com/grahamrobbo">@grahamrobbo</a><br>
+<a href="http://bit.ly/abapgit">http://bit.ly/abapgit</a><br>
+</td></tr></table>
+</section>
+
+<section>
+<img src="img/abaponsapcp.png" class="plain">
+</section>
+
+<section>
+<h2>dotabap.org</h2>
+Labs Preview, moar open source ABAP<br>
+<a href="http://dotabap.org"><img src="img/dotabap.png" class="plain"></a>
+</section>
+
+<section>
+<img src="img/sticker2.jpg" class="plain">
+</section>
+
+<section>
+<h2>#ABAPisNotDead</h2>
+<a href="https://larshp.github.io/Presentations/sitcph2017">https://larshp.github.io/Presentations/sitcph2017</a>
+<br><br>
+<table>
+<tr><td>
+<h3>Contribute</h3></td><td>
+<a href="http://abapopenchecks.org">http://abapopenchecks.org</a>
+</td></tr>
+<tr><td>
+<h3>Contribute</h3></td><td>
+<a href="http://abapgit.org">http://abapgit.org</a>
+</td></tr>
+<tr><td>
+<h3>Contribute</h3></td><td>
+<a href="http://github.com/larshp/abaplint">http://github.com/larshp/abaplint</a>
+</td></tr>
+<tr><td>
+<h3>Twitter</h3></td><td>
+<a href="https://twitter.com/LarsHvam">@LarsHvam</a>
+</td></tr>
+</table>
+<i class="fa fa-sun-o plain"></i>
+</section>
+
+			</div>
+		</div>
+		<script src="ext/reveal.js-3.5.0/js/reveal.js"></script>
+		<script>
+		  /* global Reveal */
+			Reveal.initialize({
+        history: true,
+	      slideNumber: true});
+		</script>
+		<script src="ext/prism-1.8.1/prism.js"></script>
+		<script src="ext/prism-1.8.1/components/prism-abap.js"></script>
+	</body>
+</html>
