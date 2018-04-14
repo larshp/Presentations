@@ -1,4 +1,2 @@
-# sitbal2017
-SAP Inside Track Ballerup 2017
+# sittsr2018
 
-https://larshp.github.io/sitbal2017/
