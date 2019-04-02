@@ -65,7 +65,7 @@ Test in sandbox
 </section>
 
 <section>
-<h2><b>ABAP monoliths are bad<u>?</u></b></h2>
+<h2><b>ABAP monoliths are bad<u style="color:rgb(147, 201, 57)">?</u></b></h2>
 </section>
 
 <section>
@@ -103,51 +103,72 @@ Scaling to more than ~100TB<br><br>
 </section>
 
 <section>
-Transparency
-abapGit
+<h2>CTS</h2>
+<ul>
+<li>Auditable (&lt;&gt; git)</li>
+<li>Reliable</li>
+<li>Cherry picking (gCTS?)</li>
+<li>Optimized import</li>
+<ul>
+<li>Performance</li>
+<li>Downtime</li>
+</ul>
+</ul>
 </section>
 
 <section>
-Quality
+<section>
+<h1>Transparency</h1>
+</section>
+<section>
+abapGit
+Who broke it?
+easy rollback
+Code insights(sourcetrail, sourcegraph, pharo/moose, dotabap.org)
+</section>
+<section>
+bar
+</section>
+</section>
+
+<section>
+<section>
+<h1>Quality</h1>
+</section>
+<section>
 abapOpenChecks
 abaplint
 Security
 </section>
+</section>
 
 <section>
-Speed
+<section>
+<h1>Speed</h1>
+</section>
+<section>
 Processes
 Reducing risk
+do code reviews
+</section>
 </section>
 
 <section>
-Maintainability
+<section>
+<h1>Maintainability</h1>
+</section>
+<section>
+<iframe width="900" height="500" src="https://www.youtube.com/embed/CYcJvL7qgqM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section>
 reuse/coupling/modularity
-Minimize dependencies
+Minimize dependencies(see open source dotabap.org)
 Be aware of the dependencies
-</section>
-
-<section>
 Write tests
-Deployment = auditable
 Ready for #ABAPinSAPCP
 Ready for ERP on HANA
 Ready for S/4
-Who broke it?
-easy rollback
-do code reviews
-Code insights(sourcetrail, sourcegraph, pharo/moose, dotabap.org,
 </section>
-
-<section>
-<h2>Links</h2>
-<table><tr><td>
-https://www.youtube.com/watch?v=mc8UbMcxr9A
-
-<a href="http://www.craigkerstiens.com/2019/03/13/give-me-back-my-monolith/">Give Me Back My Monolith</a> - Craig Kerstiens
-<br><br>
-<a href="https://www.gartner.com/doc/3720217/refactor-monolithic-software-maximize-architectural">Refactor Monolithic Software to Maximize Architectural and Delivery Agility</a> - Gartner
-</td></tr></table>
 </section>
 
 <section>
@@ -165,9 +186,21 @@ https://www.youtube.com/watch?v=mc8UbMcxr9A
 <a href="https://twitter.com/LarsHvam">@LarsHvam</a>
 </td></tr>
 </table>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" class="plain" src="img/by.svg" /></a>
+<br>
 <i class="fa fa-sun-o plain"></i>
 </section>
 
+<section>
+<h2>Links</h2>
+<table><tr><td>
+<a href="https://www.youtube.com/watch?v=mc8UbMcxr9A">re:Invent 2018: Breaking Up the Monolith While Migrating to AWS</a> - AWS
+<br><br>
+<a href="http://www.craigkerstiens.com/2019/03/13/give-me-back-my-monolith/">Give Me Back My Monolith</a> - Craig Kerstiens
+<br><br>
+<a href="https://www.gartner.com/doc/3720217/refactor-monolithic-software-maximize-architectural">Refactor Monolithic Software to Maximize Architectural and Delivery Agility</a> - Gartner
+</td></tr></table>
+</section>
 
 </div>
 </div>
