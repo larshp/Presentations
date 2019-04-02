@@ -103,7 +103,7 @@ Scaling to more than ~100TB<br><br>
 </section>
 
 <section>
-<h2>CTS</h2>
+<h2>Use CTS for deployment</h2>
 <ul>
 <li>Auditable (&lt;&gt; git)</li>
 <li>Reliable</li>
@@ -121,14 +121,64 @@ Scaling to more than ~100TB<br><br>
 <h1>Transparency</h1>
 </section>
 <section>
-abapGit
-Who broke it?
-easy rollback
-Code insights(sourcetrail, sourcegraph, pharo/moose, dotabap.org)
+<ul>
+<li>What changed in the dev system since yesterday?</li>
+<li>How did the message class look yesterday?</li>
+</ul>
 </section>
+
 <section>
-bar
+<img src="img/logo.svg" class="plain"><br>
+<table>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started ~5 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>~3400 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>66 contributors</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~70000 lines</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-versions"></i></td><td>7.02 and up</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-credit-card"></i></td><td>MIT License</td></tr>
+</table>
 </section>
+
+<section>
+<h3>abapGit Design Goals</h3>
+<ul>
+<li>Easy installation</li>
+<li>Easy upgrade</li>
+<li>Small system footprint</li>
+<li>Code readable in git repository</li>
+</ul>
+</section>
+
+<section>
+<h3>abapGit works with</h3>
+<table>
+<tr><td>
+<a href="https://hcp.sap.com"><img src="./img/logos/hcp.png" width="650" class="plain"></a>
+</td><td>
+<a href="https://github.com"><i class="fa fa-github fa-5x plain"></i></a>
+</td></tr>
+<tr><td align="center">
+<a href="https://www.visualstudio.com/team-services/git/"><img src="./img/logos/vs.png" width="550" class="plain"></a><br>
+<div style="color: rgb(104,33,122);">Team Services</div>
+</td><td>
+<a href="https://about.gitlab.com"><img src="./img/logos/gitlab.svg" width="250" class="plain"></a>
+</td></tr>
+<tr><td>
+<a href="https://github.com/larshp/abapGitServer"><img src="./img/logos/abapgitserver.svg" width="550" class="plain"></a><br>
+</td><td>
+<a href="https://bitbucket.org"><img src="./img/logos/bitbucket_rgb_blue.svg" width="250" class="plain"></a>
+</td></tr>
+</table>
+</section>
+
+<section>
+<a href="https://blogs.sap.com/2017/05/07/abap-using-git-for-safety-and-transparency/"><img src="img/blog_git.png" class="plain"></a>
+</section>
+
+<section>
+<img src="img/blame.png" class="plain">
+</section>
+
 </section>
 
 <section>
@@ -136,20 +186,53 @@ bar
 <h1>Quality</h1>
 </section>
 <section>
-abapOpenChecks
-abaplint
-Security
-</section>
-</section>
-
-<section>
-<section>
-<h1>Speed</h1>
+<h2>Static Analysis - SCI</h2>
+<img src="img/sci.png" class="plain">
 </section>
 <section>
-Processes
-Reducing risk
-do code reviews
+<h2>abapOpenChecks</h2>
+<a href="https://docs.abapopenchecks.org/checks/"><img src="img/abapopenchecks.png" class="plain"></a>
+</section>
+<section>
+<h2>abaplint</h2>
+<ul>
+<li>Open Source</li>
+<li>Static analysis of ABAP code</li>
+<li>Written in TypeScript</li>
+<li>Runs on files serialized by abapGit</li>
+</ul>
+</section>
+<section>
+<a href="https://syntax.abaplint.org">syntax.abaplint.org</a>
+<br><br>
+<a href="https://playground.abaplint.org">playground.abaplint.org</a>
+<br>
+</section>
+<section>
+<a href="https://jenkins.io"><img src="img/logos/jenkins.png" class="plain"></a>
+<a href="https://travis-ci.com"><img src="img/logos/travis.png" class="plain" height="230px"></a><br>
+<a href="https://github.com/apps/abaplint">GitHub App</a><br>
+<a href="https://github.com/features/actions">GitHub Actions<a><br>
+<a href="https://docs.gitlab.com/ee/ci/pipelines.html">GitLab Pipelines</a><br>
+<a href="https://bitbucket.org/product/features/pipelines">Bitbucket Pipelines</a><br>
+<a href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Azure Pipelines</a><br>
+</section>
+<section>
+<iframe width="900" height="500" src="https://dotabap.org/#/-/larshp/abapGit" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section>
+<h2>Prepare for the future</h2>
+<ul>
+<li>Unicode</li>
+<li>ERP on HANA</li>
+<li>S/4</li>
+<li>#ABAPinSAPCP</li>
+</ul>
+</section>
+<section>
+<h2>Manual Code Reviews</h2>
+<a href="https://blogs.sap.com/2018/03/23/abap-code-reviews-with-abapgit/">ABAP Code Reviews with abapGit</a><br>
+<a href="https://github.com/larshp/abapGit/pull/463/files/f6dcba99add0b200019f6988b4f1bd7d610e86de#r89613740"><img src="img/review.png" class="plain"></a>
 </section>
 </section>
 
@@ -158,21 +241,50 @@ do code reviews
 <h1>Maintainability</h1>
 </section>
 <section>
-<iframe width="900" height="500" src="https://www.youtube.com/embed/CYcJvL7qgqM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="900" height="500" src="https://www.youtube.com/embed/CYcJvL7qgqM?mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
 <section>
-reuse/coupling/modularity
-Minimize dependencies(see open source dotabap.org)
-Be aware of the dependencies
-Write tests
-Ready for #ABAPinSAPCP
-Ready for ERP on HANA
-Ready for S/4
+<ul>
+<li>Clean &lt;&gt; Empty, but Empty = Clean</li>
+<li>Write unit tests</li>
+<li>Be aware of dependencies</li>
+<li>Reduce dependencies</li>
+</ul>
+</section>
+<section>
+Open Source: <a href="https://github.com/SAP2Moose/SAP2Moose">SAP2Moose</a><br>
+<a href="img/SAP_Extractor_dependency_all.png"><img src="img/SAP_Extractor_dependency_all.png"></a>
+</section>
+<section>
+Open Source: <a href="https://github.com/sourcegraph/sourcegraph">Sourcegraph</a><br>
+<video autoplay="" loop="" controls><source src="https://storage.googleapis.com/sourcegraph-assets/video/welcome/video/Welcome-CodeNavigation.mp4" type="video/mp4"><source src="https://storage.googleapis.com/sourcegraph-assets/video/welcome/video/Welcome-CodeNavigation.m4v" type="video/x-m4v">Demo video playback is not supported on your browser.</video>
 </section>
 </section>
 
 <section>
-<img src="./img/sticker.png" class="plain"><br>
+<section>
+<h1>Speed</h1>
+</section>
+<section>
+<ul>
+<li>Processes</li>
+<li>Easy rollback</li>
+<li>Reducing risk</li>
+</ul>
+</section>
+</section>
+
+<section>
+<img src="img/foo4.svg" class="plain">
+</section>
+
+<section>
+<h2>dotabap.org</h2>
+<a href="https://dotabap.org"><img src="./img/dotabap3.png" class="plain"></a>
+</section>
+
+<section>
+<img src="./img/sticker.png" class="plain">
 </section>
 
 <section>
