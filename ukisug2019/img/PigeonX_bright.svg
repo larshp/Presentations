@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="180mm"
+   height="42mm"
+   viewBox="0 0 180 42"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="PigeonX_bright.svg"
+   inkscape:export-filename="C:\Users\LHVP\Desktop\bitmap.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath38">
+      <path
+         inkscape:connector-curvature="0"
+         d="M 0,600 H 800 V 0 H 0 Z"
+         id="path36" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="47.578673"
+     inkscape:cy="-276.24317"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1703"
+     inkscape:window-height="1008"
+     inkscape:window-x="2051"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:pagecheckerboard="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-14.461125,-14.175534)">
+    <g
+       id="g10"
+       transform="matrix(0.87127095,0,0,-0.87127095,-248.66289,292.14762)">
+      <g
+         id="g12"
+         transform="translate(284.3267,254.8281)" />
+      <g
+         id="g16"
+         transform="translate(294.6792,305.0845)" />
+      <g
+         id="g22"
+         transform="translate(402.1191,281.9707)" />
+      <g
+         id="g26"
+         transform="translate(450.1689,317.8647)" />
+      <g
+         id="g32">
+        <g
+           id="g34"
+           clip-path="url(#clipPath38)">
+          <g
+             id="g40"
+             transform="translate(540.4941,293.3428)" />
+          <g
+             id="g44"
+             transform="translate(494.7383,303.6777)">
+            <path
+               inkscape:connector-curvature="0"
+               d="M 0,0 11.566,14.187 H 1.026 L -5.26,6.247 Z"
+               style="fill:#527f89;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path46" />
+          </g>
+          <g
+             id="g48"
+             transform="translate(489.4365,290.2725)">
+            <path
+               inkscape:connector-curvature="0"
+               d="M 0,0 6.851,-8.302 H 17.397 L 5.302,6.54 Z"
+               style="fill:#527f89;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path50" />
+          </g>
+          <g
+             id="g52"
+             transform="translate(478.1543,317.8643)">
+            <path
+               inkscape:connector-curvature="0"
+               d="M 0,0 H -10.543 L 3.533,-17.635 -11.07,-35.894 h 10.545 l 14.6,18.033 z"
+               style="fill:#fffffc;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path54" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:43.58316422px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.68098694"
+       x="12.348612"
+       y="46.474323"
+       id="text4574"><tspan
+         sodipodi:role="line"
+         id="tspan4594"
+         x="12.348612"
+         y="46.474323"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.68098694">Pigeon</tspan></text>
+  </g>
+</svg>
